@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- header css -->
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <title>Shotter Shondhane-Login</title>
+    <style>
+      .activelink {
+        background-color: #f39c12;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <!-- header -->
+      <%-include("./partials/header")%>
+      <div class="login-main">
+        <div class="login-box">
+          <h1>Log In</h1>
+          <form action="/login" method="POST" onsubmit="return fomsubmit()">
+            <input
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              id="username"
+            /><br />
+            <input
+              type="password"
+              placeholder="Enter Your Password"
+              name="password"
+              id="password"
+            /><br />
+            <%if(typeof message !== "undefined"){%>
+            <p><%=message%></p>
+            <%}%>
+            <p id="formtext"></p>
+            <button>Log In</button>
+          </form>
+        </div>
+      </div>
+      <!-- footer -->
+      <%-include("./partials/footer.ejs")%>
+      <!-- footer -->
+    </div>
+
+    <script>
+      let currlink = window.location.pathname.split("/").pop();
+      let linkactive = document.querySelectorAll("ul li a").forEach((e) => {
+        if (e.href.includes(currlink)) {
+          e.classList.add("activelink");
+        }
+      });
+      let password = document.getElementById("password");
+      let username = document.getElementById("username");
+      let formtext = document.getElementById("formtext");
+      function fomsubmit() {
+        if (username.value == "" || password.value == "") {
+          formtext.innerHTML = "Please,fill the form correctly !";
+          return false;
+        } else if (password.value.length < 6) {
+          formtext.innerHTML = "Password should be greater than 5 character";
+          return false;
+        } else if (password.value.length > 12) {
+          formtext.innerHTML = "Password should be less than 12 character";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

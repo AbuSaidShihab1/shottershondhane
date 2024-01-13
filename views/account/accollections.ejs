@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- information css -->
+    <link rel="stylesheet" href="../css/income.css">
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Shotter-Shondhane Users</title>
+    <style>
+        .adminactive {
+            width: 0%;
+            transition: 0.3s;
+        }
+
+        .adminacright {
+            width: 100%;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin">
+        <div class="admin-left">
+            <%-include("../partials/acleft")%>
+                <!-- menu -->
+        </div>
+        <div class="admin-right">
+            <!-- top header -->
+            <%-include("../partials/acheader.ejs")%>
+                <!-- add user -->
+                <div class="income-showsec">
+
+                    <div class="income-add">
+                        <h1>Add Collection</h1>
+                        <form action="/admin/income" method="POST" onsubmit="return fomsubmit()">
+                            <input type="text" placeholder="Type" name="type" required><br>
+                            <input type="text" placeholder="Source" name="source" required><br>
+                            <input type="number" placeholder="Amount" name="amount" required><br>
+                            <input type="number" placeholder="Member Code" name="membercode"id="membercode" required><br>
+                            <%if(typeof message !=="undefined" ){%>
+                                <p id="updatetext">
+                                    <%=message%>
+                                </p>
+                                <%}%>
+                                <p id="formtext"style="color:red;margin-top:20px"></p>
+                                    <button>Add <i class='bx bxs-right-arrow-square'></i></button>
+                        </form>
+                    </div>
+                    <!-- all income information -->
+
+                    <div class="income-show">
+                        <%if(data.length> 0){%>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Source</th>
+                                        <th>Member Code</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%data.forEach((e)=>{%>
+                                        <tr>
+                                            <td>
+                                                <%=e.type%>
+                                            </td>
+                                            <td>
+                                                <%=e.source%>
+                                            </td>
+                                            <td>
+                                                <%=e.membercode%>
+                                            </td>
+                                            <td>
+                                                <%=e.amount%> Tk
+                                            </td>
+                                        </tr>
+                                        <%})%>
+                                </tbody>
+                            </table>
+
+                            <%}else{%>
+                                <h2>We Have Not Any Data !</h2>
+
+                                <%}%>
+                    </div>
+
+                    <!-- all income information -->
+
+                </div>
+                <!-- add user -->
+        </div>
+    </div>
+
+
+    <script src="../js/sidebar.js"></script>
+    <script>
+        let membercode=document.getElementById("membercode");
+  function fomsubmit(){
+     if (membercode.value.length <5) {
+        formtext.innerHTML = "Membercode should be greater than 4 character";
+        return false
+      }
+      else if (password.value.length >6) {
+        formtext.innerHTML = "Membercode should be less than 6 character";
+        return false
+      }
+  }
+    </script>
+</body>
+
+</html>

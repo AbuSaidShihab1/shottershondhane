@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css link -->
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/registration.css" />
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>Document</title>
+    <style>
+      .activelink {
+        background-color: #f39c12;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="registration-participate">
+      <!-- header -->
+      <%-include("./partials/header.ejs")%>
+      <!-- header -->
+      <div class="registration-hero">
+        <h1>Registration</h1>
+        <p>
+          If you want to participate in our competetion. You can registration
+          first for complete your participating in
+          <span>shottershondhane</span> .
+        </p>
+      </div>
+    </div>
+    <!-- registraton form -->
+    <div class="regis-form">
+      <div class="regis-text">
+        <h1>Registration Information</h1>
+      </div>
+      <form action="/participate-registration" method="POST">
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Name</label><br />
+            <input type="text" name="name" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Father's Name</label><br />
+            <input type="text" name="fathername" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Date Of Birth</label><br />
+            <input type="date" name="dateofbirth" required />
+          </div>
+          <div class="formbox">
+            <label for="category">Category</label><br />
+            <select name="category" id="category">
+              <option value="selec">--Select--</option>
+              <option value="madrasha">Madrasha</option>
+              <option value="school">School</option>
+              <option value="collage">Collage</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Class</label><br />
+            <select name="classname" id="class">
+              <option value="">--Select--</option>
+              <option value="1" id="one">One</option>
+              <option value="2" id="two">Two</option>
+              <option value="3" id="three">Three</option>
+              <option value="4" id="four">Four</option>
+              <option value="5" id="five">Five</option>
+              <option value="6" id="six">Six</option>
+              <option value="7" id="seven">Seven</option>
+              <option value="8" id="eight">Eight</option>
+              <option value="9" id="nine">Nine</option>
+              <option value="10" id="ten">Ten</option>
+              <option value="first year" id="firstyear">First Year</option>
+              <option value="second year" id="secondyear">Second Year</option>
+              <option value="alim" id="alim">Alim</option>
+              <option value="dakhil first year" id="dakhilfirst">
+                Dakil First Year
+              </option>
+              <option value="dakhil second year" id="dakhilsecond">
+                Dakhil Second Year
+              </option>
+            </select>
+          </div>
+          <div class="formbox">
+            <label for="name">Institute</label><br />
+            <input type="text" class="institute" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Nationality</label><br />
+            <input type="text" name="nationality" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Religion</label><br />
+            <input type="text" name="religion" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Gender</label><br />
+            <select name="gender" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="formbox">
+            <label for="name">Village</label><br />
+            <input type="text" name="village" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Thana</label><br />
+            <input type="text" name="thana" required />
+          </div>
+          <div class="formbox">
+            <label for="name">District</label><br />
+            <input type="text" name="district" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Division</label><br />
+            <input type="text" name="division" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Mobile</label><br />
+            <input type="text" name="mobile" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Email</label><br />
+            <input type="text" name="email" required />
+          </div>
+        </div>
+
+        <button>Submit</button>
+      </form>
+
+      <!-- registraton form -->
+    </div>
+    <!-- footer -->
+    <%-include("./partials/footer.ejs")%>
+    <!-- footer -->
+    <!-- toggle code -->
+    <script>
+      let category = document.getElementById("category");
+      let one = document.getElementById("one");
+      let two = document.getElementById("two");
+      let three = document.getElementById("three");
+      let four = document.getElementById("four");
+      let five = document.getElementById("five");
+      let six = document.getElementById("six");
+      let seven = document.getElementById("seven");
+      let eight = document.getElementById("eight");
+      let nine = document.getElementById("nine");
+      let ten = document.getElementById("ten");
+      let firstyear = document.getElementById("firstyear");
+      let secondyear = document.getElementById("secondyear");
+      let alim = document.getElementById("alim");
+      let dakhilfirst = document.getElementById("dakhilfirst");
+      let dakhilsecond = document.getElementById("dakhilsecond");
+      function deldata() {
+        one.style.display = "none";
+        two.style.display = "none";
+        four.style.display = "none";
+        three.style.display = "none";
+        five.style.display = "none";
+        six.style.display = "none";
+        seven.style.display = "none";
+        eight.style.display = "none";
+        nine.style.display = "none";
+        ten.style.display = "none";
+        firstyear.style.display = "none";
+        secondyear.style.display = "none";
+        alim.style.display = "none";
+        dakhilfirst.style.display = "none";
+        dakhilsecond.style.display = "none";
+      }
+      deldata();
+      category.addEventListener("change", (e) => {
+        if (e.target.value == "madrasha") {
+          one.style.display = "block";
+          two.style.display = "block";
+          four.style.display = "block";
+          three.style.display = "block";
+          five.style.display = "block";
+          six.style.display = "block";
+          seven.style.display = "block";
+          eight.style.display = "block";
+          nine.style.display = "block";
+          ten.style.display = "block";
+          alim.style.display = "block";
+          dakhilfirst.style.display = "block";
+          dakhilsecond.style.display = "block";
+        } else if (e.target.value == "selec") {
+          one.style.display = "none";
+          two.style.display = "none";
+          four.style.display = "none";
+          three.style.display = "none";
+          five.style.display = "none";
+          six.style.display = "none";
+          seven.style.display = "none";
+          eight.style.display = "none";
+          nine.style.display = "none";
+          ten.style.display = "none";
+          firstyear.style.display = "none";
+          secondyear.style.display = "none";
+          alim.style.display = "none";
+          dakhilfirst.style.display = "none";
+          dakhilsecond.style.display = "none";
+        } else if (e.target.value == "school") {
+          one.style.display = "block";
+          two.style.display = "block";
+          four.style.display = "block";
+          three.style.display = "block";
+          five.style.display = "block";
+          six.style.display = "block";
+          seven.style.display = "block";
+          eight.style.display = "block";
+          nine.style.display = "block";
+          ten.style.display = "block";
+          alim.style.display = "none";
+          dakhilfirst.style.display = "none";
+          dakhilsecond.style.display = "none";
+        } else if (e.target.value == "collage") {
+          one.style.display = "none";
+          two.style.display = "none";
+          four.style.display = "none";
+          three.style.display = "none";
+          five.style.display = "none";
+          six.style.display = "none";
+          seven.style.display = "none";
+          eight.style.display = "none";
+          nine.style.display = "none";
+          ten.style.display = "none";
+          alim.style.display = "none";
+          dakhilfirst.style.display = "none";
+          dakhilsecond.style.display = "none";
+          firstyear.style.display = "block";
+          secondyear.style.display = "block";
+        }
+      });
+      category.addEventListener("change", function (e) {
+        console.log(e.target.value);
+      });
+      let currlink = window.location.pathname.split("/").pop();
+      let linkactive = document.querySelectorAll("ul li a").forEach((e) => {
+        if (e.href.includes(currlink)) {
+          e.classList.add("activelink");
+        }
+      });
+      let navi = document.getElementById("nav");
+      let togg = document.getElementById("toggle");
+      togg.addEventListener("click", function () {
+        navi.classList.toggle("navigation");
+      });
+    </script>
+  </body>
+</html>

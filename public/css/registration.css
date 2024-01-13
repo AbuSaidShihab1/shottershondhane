@@ -1,0 +1,112 @@
+.registration-participate{
+    width: 100%;
+    height: 70vh;
+    background-image:linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://cdn.wallpapersafari.com/66/1/DRATIq.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.nodevalue{
+    display: none;
+}
+.registration-hero{
+    text-align: center;
+    width: 40%;
+}
+.registration-hero h1{
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+.registration-hero p{
+    font-size: 1.8rem;
+    line-height: 25px;
+}
+.registration-hero p span{
+    color: var(--theme1);
+    font-size: 2rem;
+}
+.regis-form{
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    font-family: 'Poppins', sans-serif;
+    background-color: whitesmoke;
+}
+.regis-text{
+    text-align: center;
+    padding: 2rem;
+}
+.regis-text h1{
+    font-size: 3.2rem;
+}
+.regis-form form{
+    width: 70%;
+    height: auto;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+/* .regis-form form input{
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    border: 1px solid gray;
+    margin: 1rem 0;
+} */
+.formbox label{
+    font-size: 1.8rem;
+}
+form button{
+    width: 18rem;
+    height: 5.5rem;
+    font-size: 1.8rem;
+    color: white;
+    background-color: var(--theme2);
+    border: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+.input-field{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.input-field .formbox{
+    width: 50%;
+}
+.formbox select{
+    width: 100%;
+    height: 55px;
+    padding: 1px;
+    background: none;
+    border: 1px solid #dcdde1;
+    font-size: 17px;
+}
+.input-field .formbox input{
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    font-size: 17px;
+    background: none;
+    border: 1px solid #dcdde1;
+
+}
+@media(max-width:768px){
+    .registration-hero{
+        width: 90%;
+    }
+    .regis-form{
+        padding: 3rem;
+    }
+    .regis-form form{
+        width: 100%;
+    }
+}

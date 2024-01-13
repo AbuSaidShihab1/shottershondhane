@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- icon link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+         crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"><!-- information css -->
+    <link rel="stylesheet" href="../css/users.css">
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Shotter-Shondhane Users</title>
+    <style>
+      .adminactive{
+width: 0%;
+transition: 0.3s;
+}
+.adminacright{
+width: 100%;
+transition: 0.3s;
+}
+</style>
+</head>
+<body>
+    <div class="admin">
+        <div class="admin-left">
+           <%-include("../partials/amleft")%>
+            <!-- menu -->
+        </div>
+        <div class="admin-right">
+           <!-- top header -->
+           <%-include("../partials/amheader.ejs")%>
+        <!-- add user -->
+       <div class="users-store">
+<!-- show member information -->
+          <div class="users-infomain">
+            <div class="users-infobox">
+                 <img src="https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?s=612x612&w=0&k=20&c=ZiuzNX9LhTMMcRFrYNfq_zFR7O_aH-q7x1L5elko5uU=" alt="">
+                 <h2>Abu Said Shihab</h2>
+                 <p>Mobile No :016882383883 </p>
+                 <p>Email :shihab13@gmail.com</p>
+                 <div class="useupdate-info">
+                    <a href="#">Update</a>
+                    <a href="#">Delete</a>
+                 </div>
+            </div>
+            <div class="users-infobox">
+                <img src="https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?s=612x612&w=0&k=20&c=ZiuzNX9LhTMMcRFrYNfq_zFR7O_aH-q7x1L5elko5uU=" alt="">
+                <h2>Abu Said Shihab</h2>
+                <p>Mobile No :016882383883 </p>
+                <p>Email :shihab13@gmail.com</p>
+                <div class="useupdate-info">
+                   <a href="#">Update</a>
+                   <a href="#">Delete</a>
+                </div>
+           </div>
+
+           <div class="users-infobox">
+            <img src="https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?s=612x612&w=0&k=20&c=ZiuzNX9LhTMMcRFrYNfq_zFR7O_aH-q7x1L5elko5uU=" alt="">
+            <h2>Abu Said Shihab</h2>
+            <p>Mobile No :016882383883 </p>
+            <p>Email :shihab13@gmail.com</p>
+            <div class="useupdate-info">
+               <a href="#">Update</a>
+               <a href="#">Delete</a>
+            </div>
+       </div>
+
+       <div class="users-infobox">
+        <img src="https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?s=612x612&w=0&k=20&c=ZiuzNX9LhTMMcRFrYNfq_zFR7O_aH-q7x1L5elko5uU=" alt="">
+        <h2>Abu Said Shihab</h2>
+        <p>Mobile No :016882383883 </p>
+        <p>Email :shihab13@gmail.com</p>
+        <div class="useupdate-info">
+           <a href="#">Update</a>
+           <a href="#">Delete</a>
+        </div>
+   </div>
+
+   <div class="users-infobox">
+    <img src="https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?s=612x612&w=0&k=20&c=ZiuzNX9LhTMMcRFrYNfq_zFR7O_aH-q7x1L5elko5uU=" alt="">
+    <h2>Abu Said Shihab</h2>
+    <p>Mobile No :016882383883 </p>
+    <p>Email :shihab13@gmail.com</p>
+    <div class="useupdate-info">
+       <a href="#">Update</a>
+       <a href="#">Delete</a>
+    </div>
+</div>
+
+<div class="users-infobox">
+    <img src="https://media.istockphoto.com/id/1319763895/photo/smiling-mixed-race-mature-man-on-grey-background.jpg?s=612x612&w=0&k=20&c=ZiuzNX9LhTMMcRFrYNfq_zFR7O_aH-q7x1L5elko5uU=" alt="">
+    <h2>Abu Said Shihab</h2>
+    <p>Mobile No :016882383883 </p>
+    <p>Email :shihab13@gmail.com</p>
+    <div class="useupdate-info">
+       <a href="#">Update</a>
+       <a href="#">Delete</a>
+    </div>
+</div>
+
+
+          </div>
+<!-- show member information -->
+         <div class="pagination-member">
+            <ul>
+                <li><a href="#"><i class='bx bx-chevron-left'></i></a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#"><i class='bx bx-chevron-right'></i></a></li>
+            </ul>
+         </div>
+        </div>
+        <!-- add user -->
+        </div>
+    </div>
+
+      <script src="../js/sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+.abouther{
+    width: 100%;
+    height: 70vh;
+    background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url("/images/aboutb.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-top:11rem;
+}
+.aboutherobox{
+    margin-left: 7rem;
+    width: 35%;
+}
+.aboutherobox h1{
+    font-size: 4rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--theme1);
+}
+.aboutherobox p{
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    color: white;
+}
+
+.participate-regulation{
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: whitesmoke;
+}
+.participate-text{
+    font-size: 2.1rem;
+    padding: 3rem;
+}
+.regulation-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+.regulation-box{
+    width: 30%;
+    height: 30rem;
+    background-color: var(--theme1);
+    border-radius: 10px;
+}
+#hostbox2{
+
+}
+.media{
+    width: 100%;
+    height:auto ;
+    padding: 5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.mediatext{
+    font-size: 2.1rem;
+    text-align: center;
+}
+.media-main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+.mediaright img{
+    width: 30rem;
+    height: 20rem;
+}
+.media-box h3{
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
+    color: white;
+}
+.media-box h1{
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+.media-box p{
+    font-size: 1.7rem;
+    color: wheat;
+    margin-bottom: 10px;
+}
+.media-box p span{
+    color: white;
+    padding: 0.5rem;
+    background-color: var(--theme2);
+}
+.swiper-slide:nth-child(2){
+    background-color: #007AFF;
+}
+.swiper-slide:nth-child(3){
+    background-color: #2ECC71;
+}
+.swiper {
+    width: 80%;
+    margin-top: 60px;
+  }
+  .media-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 3rem;
+    background-color: var(--theme1);
+    margin: auto;
+    border-radius: 10px;
+    background: rebeccapurple;
+}
+  .swiper-slide {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme1);
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    gap: 30px;
+  }
+
+@media(max-width:768px){
+    .abouther{
+        justify-content: center;
+    }
+    .aboutherobox{
+        width: 80%;
+        text-align: center;
+        margin: 0;
+    }
+    .participate-regulation{
+        padding: 3rem;
+    }
+    #hostbox2{
+        flex-direction: column;
+    }
+    .regulation-main{
+        flex-direction: column;
+
+    }
+    .regulation-box{
+        width: 100%;
+    }
+    .media{
+        padding: 3rem;
+    }
+    .media-box{
+        width: 100%;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+}

@@ -1,0 +1,44 @@
+header{
+    width: 100%;
+    height: 12vh;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f6fa;
+}
+.logo h1{
+    font-family: "Robot",sans-serif;
+    font-size: 25px;
+}
+nav ul{
+    display: flex;
+    gap: 30px;
+    font-size: 18px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 300;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    color: #7f8c8d;
+    text-decoration: none;
+    padding: 10px;
+}
+.menu{
+    padding: 8px 17px;
+    background-color: #0097e6;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+.menu i{
+    font-size: 30px;
+    color: white;
+}
+.activelink{
+    background-color: #6D214F;
+    color: white;
+    border-radius: 5px;
+}

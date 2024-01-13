@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Lexend&family=Playfair+Display:wght@400&family=Roboto:wght@400;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Lexend&family=Open+Sans:wght@500&family=Playfair+Display:wght@500&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&family=Lexend&family=Playfair+Display:wght@500&family=Roboto:wght@500;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;1,200&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+:root{
+    --theme1:#F39C12;
+    --theme2:#6D214F;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x:hidden ;
+}
+::selection{
+    background-color: white;
+    color: ccyan;
+}
+header{
+    width: 100%;
+    height: auto;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1.5rem 10rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-family: "Poppins",sans-serif;
+}
+.logo img{
+    transform: scale(1.2);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    float: left;
+    margin-right: 10px;
+    position:relative;
+}
+nav ul li a{
+    font-size: 1.9rem;
+    color: black;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 0.3rem;
+    font-family: 'Poppins', sans-serif;
+}
+nav ul li ul{
+    position: absolute;
+    top: 6rem;
+    left:0;
+    background-color: whitesmoke;
+    text-align: center;
+    display: none;
+}
+nav ul li a i{
+    color: #227093;
+}
+nav ul li ul li{
+   width: 100%;
+}
+nav ul li ul li:last-child{
+    border: none;
+}
+nav ul li:hover ul{
+    display: block;
+}
+.navigation{
+    left: 0;
+    transition: 0.4s;
+}
+.toggle{
+    display: none;
+    padding: 1rem;
+    background-color: #8c7ae6;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.toggle i{
+    color: white;
+    font-size: 3.5rem;
+}
+
+
+/* ---------------------------------hero section ------------------------- */
+.hero{
+        width: 100%;
+        height: 100vh;
+        background-image:linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("/images/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center; 
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left:10rem;
+        font-family: 'Josefin Sans', sans-serif;
+}
+.hbox{
+  
+}
+.hbox h1{
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.hbox p{
+    font-size: 1.6rem;
+    color:white ;
+    line-height: 2.4rem;
+    margin-bottom: 20px;
+}
+#hostbox2{
+
+}
+.hbox p span{
+        color: var(--theme1);
+}
+.hbox button{
+    width: 180px;
+    height: 55px;
+    font-size: 18px;
+    color: white;
+    background-color: var(--theme2);
+    border: none;
+    cursor: pointer;
+}
+
+/* -----------------------host--------------------------- */
+
+.host{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 5rem;
+}
+.hostbox{
+    width: 40%;
+    height: auto;
+    padding: 2rem;
+}
+.borderbox{
+    width: 32rem;
+    height: 32rem;
+    border: 0.5rem solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hostbox img{
+    width: 30rem;
+    height: 30rem;
+}
+.hostleft h1{
+    font-size: 3rem;
+    color: var(--theme1);
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 20px;
+}
+.hostleft p{
+    font-size: 1.6rem;
+    color:black ;
+    line-height: 2.4rem;
+    margin-bottom: 20px;
+}
+.hostleft p a{
+    text-decoration: none;
+}
+
+.hostleft button{
+    width: 180px;
+    height: 55px;
+    font-size: 18px;
+    color: white;
+    background-color: var(--theme2);
+    border: none;
+    cursor: pointer;
+}
+.hostright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+/* -----------------------host--------------------------- */
+
+/* -----------------------description--------------------------- */
+.description{
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+}
+.text{
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+.text h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.desmain{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.desbox{
+    width: 30%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: var(--theme1);
+    border-radius: 10px;
+}
+.desbox i{
+    font-size: 3rem;
+    color: white;
+}
+.desbox h1{
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+
+
+/* -----------------------description--------------------------- */
+
+/* ---------------------prizes---------------------- */
+.prizes{
+    width: 100%;
+    height: auto;
+    padding: 5rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+.prixtext{
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+.prixtext h1{
+    font-size: 3rem;
+}
+.primain{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.prizbox{
+    width: 30%;
+    padding: 2rem;
+    height: 300px;
+    border-radius: 10px;
+    background-color: var(--theme2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.prizbox h2{
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.prizbox p{
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 20px;
+    color: white;
+}
+.seem{
+    width: 100%;
+    text-align: center;
+}
+.seem a{
+    font-size: 2rem;
+    text-decoration: none;
+}
+/* ---------------------prizes---------------------- */
+
+/* ---------------------sponser---------------------- */
+.swiper {
+    width: 70%;
+    height: auto;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 150px;
+    height: 150px;
+  }
+.sponser{
+    background-color: whitesmoke;
+    padding: 40px 100px;
+    font-family: 'Roboto', sans-serif;
+}
+.sptext{
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+.sptext h1{
+    font-size: 3rem;
+}
+.spmain{
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    flex-wrap: wrap;
+}
+.spmain img{
+    width: 10rem;
+    height:10rem;
+}
+/* ---------------------sponser end---------------------- */
+
+/*--------------------footer-------------------- */
+/* footer */
+footer{
+    width: 100%;
+    background-color: #202020;
+    font-family: 'Poppins', sans-serif;
+}
+.fbox1{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 30px 80px;
+    gap: 30px;
+}
+.ffbox{
+    width: 30%;
+}
+.ffbox h2{
+    color: white;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-family: "Poppins",sans-serif;
+}
+.address-box{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.address-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.address-icon i{
+    color: white;
+    font-size: 20px;
+}
+.address-box h3{
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    color: white;
+}
+.address-box h3:hover{
+    color: var(--maincolo);
+}
+.ffbox3 input{
+    width: 300px;
+    height: 55px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dcdde1;
+    background: none;
+    outline-color: #fbc531;
+    color: white;
+}
+.ffbox3 input::placeholder{
+    color: white;
+}
+.ffbox3 button{
+    margin-top: 10px;
+    width: 150px;
+    height: 55px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color:#fbc531;
+}
+.fbox2{
+    height: 50px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fbox2 p{
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+/*--------------------footer-------------------- */
+
+
+/*------------------- mobile responsive------------------------- */
+@media(max-width:768px){
+    html{
+        overflow-x: hidden;
+        font-size: 50%;
+    }
+    header{
+        padding:1.5rem 4rem;
+    }
+    nav{
+        position: absolute;
+        top: 12vh;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        z-index: 1000;
+        background-color: white;
+    }
+    nav ul li{
+        width: 100%;
+    }
+    nav ul li ul{
+        position: relative;
+        width: 100%;
+        height:auto;
+        top: 0;
+        left: 0;
+    }
+    nav ul li{
+        background-color: whitesmoke;
+    }
+    nav ul li:hover{
+        background-color: gray;
+    }
+    .toggle{
+        display: block;
+    }
+    .hero{
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .hbox{
+        text-align: center;
+    }
+    .hero h1{
+        font-size: 2.5rem;
+    }
+    .host{
+        flex-direction: column-reverse;
+        padding: 2rem;
+        gap: 4rem;
+    }
+    #hostbox2{
+        flex-direction: column;
+    }
+    .hostbox{
+        width: 100%;
+    }
+    .hostbox h1{
+        font-size: 2.5rem;
+    }
+    .description{
+        padding: 2rem;
+    }
+    .text h1{
+        font-size: 2.2rem;
+        padding: 1rem;
+    }
+    .desbox{
+        width: 100%;
+    }
+    .prizes{
+        pad: 2rem;
+    }
+    .prizbox{
+        width: 100%;
+    }
+    .spmain{
+        width: 100%;
+        gap: 2.5rem;
+    }
+    .spmain img{
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+    .sponser{
+        width: 100%;
+        padding: 20px;
+    }
+    .swiper{
+        width: 100%;
+    }
+    .swiper-slide img{
+        width: 70px;
+        height: 70px;
+    }
+    #phpimg img{
+        width: 70px;
+        height: 70px;
+        display: none;
+    }
+    .prizes{
+        padding: 2rem;
+    }
+    .fbox1{
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+       padding: 40px 40px;
+    }
+    .ffbox{
+        width: 100%;
+    }
+    .ffbox3 button{
+        font-size: 16px;
+    }
+    .fbox2 p{
+        font-size: 15px;
+    }
+    .side-icon #closeicon{
+    display: none;
+}
+}

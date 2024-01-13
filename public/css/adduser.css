@@ -1,0 +1,73 @@
+.user-showsec{
+    width: 100%;
+    padding: 40px;
+}
+.user-add h1{
+    margin-bottom: 20px;
+}
+.user-add form{
+   width: 100%;
+}
+.user-add form input{
+   width: 100%;
+   height: 60px;
+   border-radius: 2px;
+   margin-bottom: 10px;
+   padding: 15px;
+   font-size: 17px;
+   color: var(--para);
+   background-color: #dfe4ea;
+   border: none;
+   outline-color: #26de81;
+}
+.user-file{
+   width: 100%;
+   height: 60px;
+   border-radius: 2px;
+   margin-bottom: 10px;
+   padding: 15px;
+   font-size: 17px;
+   color: var(--para);
+   background-color: #26de81;
+   border: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   cursor: pointer;
+   gap: 20px;
+}
+.user-file label{
+   color: white;
+   font-size: 18px;
+   cursor: pointer;
+}
+.user label{
+   font-size: 19px;
+}
+.user-file img{
+   width: 50px;
+}
+.user-file input{
+   position:absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   opacity: 0;
+}
+.user-showsec form button{
+   width: 170px;
+   height: 55px;
+   background-color: #EA2027;
+   font-size: 17px;
+   color: white;
+   border: 1px solid #EA2027;
+   cursor: pointer;
+   border-radius: 5px;
+   margin-top: 15px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}

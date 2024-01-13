@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../css/memincome.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <title>Shotter-Shondhane Admin</title>
+    <style>
+      .adminactive {
+        width: 0%;
+        transition: 0.3s;
+      }
+      .adminacright {
+        width: 100%;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin">
+      <div class="admin-left">
+        <%-include("../partials/memleft")%>
+        <!-- menu -->
+      </div>
+      <div class="admin-right">
+        <!-- top header -->
+        <%-include("../partials/amheader.ejs")%>
+
+        <!-- income show -->
+        <div class="memincome-main">
+          <div class="memincome-show">
+            <h2>Our Total Collections</h2>
+            <%if(data.length> 0){%>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Source</th>
+                  <th>Member Code</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <%data.forEach((e)=>{%>
+                <tr>
+                  <td><%=e.type%></td>
+                  <td><%=e.source%></td>
+                  <td><%=e.membercode%></td>
+                  <td><%=e.amount%> Tk</td>
+                </tr>
+                <%})%>
+              </tbody>
+            </table>
+
+            <%}else{%>
+            <h2>We Have Not Any Data !</h2>
+
+            <%}%>
+          </div>
+        </div>
+
+        <!-- income show -->
+      </div>
+    </div>
+    <script src="../js/sidebar.js"></script>
+    <script>
+      var oriloaction = window.location.pathname;
+      var linka = document.querySelectorAll("ul li a").forEach((e) => {
+        if (e.href.includes(oriloaction)) {
+          e.classList.add("activelink");
+        }
+      });
+      let adminleft = document.querySelector(".admin-left");
+      let adminright = document.querySelector(".admin-right");
+      let sideicon = document.querySelector(".side-icon");
+      sideicon.addEventListener("click", function () {
+        adminleft.classList.toggle("adminactive");
+        adminright.classList.toggle("adminacright");
+      });
+      let sideicon2 = document.querySelector(".side-icon2");
+      sideicon2.addEventListener("click", function () {
+        adminleft.style.left = "0";
+      });
+      let removebox = document.querySelector(".removebox");
+      removebox.addEventListener("click", () => {
+        adminleft.style.left = "-400px";
+      });
+    </script>
+  </body>
+</html>

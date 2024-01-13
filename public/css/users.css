@@ -1,0 +1,94 @@
+.users-store{
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+.users-infomain{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.users-infobox{
+    width: 30%;
+   height: auto;
+   background-color: #dcdde1;
+   border-radius: 10px;
+   padding: 10px;
+   text-align: center;
+}
+.users-infobox img{
+    width: 200px;
+    height: 200px;
+    border-radius:50%;
+ }
+ .users-infobox h2{
+    font-size: 20px;
+    margin-top: 10px;
+    font-family: "Poppins",sans-serif;
+ }
+ .users-infobox p{
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: left;
+ }
+ .useupdate-info{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+ }
+ .useupdate-info a{
+    padding: 10px 20px;
+    background-color:var(--admintheme) ;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+
+ }
+ .pagination-member{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+ }
+ .pagination-member ul{
+    display: flex;
+ }
+ .pagination-member ul li{
+    list-style: none;
+ }
+ .pagination-member ul li{
+    padding: 20px;
+    background-color: white;
+ }
+ .pagination-member ul li a{
+    font-size: 20px;
+     text-decoration: none;
+     color: black;
+     font-family: "Poppins",sans-serif;
+ }
+ .pagination-member ul li a i{
+    font-size: 25px;
+ }
+ .pagination-member ul li:hover{
+    background-color: #0097e6;
+ }
+ .pagination-member ul li:hover a{
+    color: white;
+ }
+ .pagination-member ul li a{
+   background: none;
+ }
+
+ @media(max-width:768px){
+   .users-infobox{
+      width: 45%;
+   }
+ }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css link -->
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/registration.css" />
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>Document</title>
+    <style>
+      .activelink {
+        background-color: #f39c12;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="registration-participate">
+      <!-- header -->
+      <%-include("./partials/header.ejs")%>
+      <!-- header -->
+      <div class="registration-hero">
+        <h1>Audiance Registration</h1>
+        <p>
+          If you want to participate in our competetion. You can registration
+          first for complete your participating in
+          <span>shottershondhane</span> .
+        </p>
+      </div>
+    </div>
+    <!-- registraton form -->
+    <div class="regis-form">
+      <div class="regis-text">
+        <h1>Registration Information</h1>
+      </div>
+      <form action="/audiance-registration" method="post">
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Name</label><br />
+            <input type="text" name="name" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Ocupation</label><br />
+            <input type="text" name="ocupation" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Address</label><br />
+            <input type="text" name="address" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Gender</label><br />
+            <select name="gender" id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Religion</label><br />
+            <input type="text" name="religion" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Nationality</label><br />
+            <input type="text" name="nationality" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <div class="formbox">
+            <label for="name">Mobile</label><br />
+            <input type="number" name="mobile" required />
+          </div>
+          <div class="formbox">
+            <label for="name">Email</label><br />
+            <input type="text" name="email" required />
+          </div>
+        </div>
+
+        <button>Submit</button>
+      </form>
+
+      <!-- registraton form -->
+    </div>
+    <!-- footer -->
+    <%-include("./partials/footer.ejs")%>
+    <!-- footer -->
+    <!-- toggle code -->
+    <script>
+      let currlink = window.location.pathname.split("/").pop();
+      let linkactive = document.querySelectorAll("ul li a").forEach((e) => {
+        if (e.href.includes(currlink)) {
+          e.classList.add("activelink");
+        }
+      });
+      let navi = document.getElementById("nav");
+      let togg = document.getElementById("toggle");
+      togg.addEventListener("click", function () {
+        navi.classList.toggle("navigation");
+      });
+    </script>
+  </body>
+</html>

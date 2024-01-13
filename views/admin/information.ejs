@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- icon link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> <!-- information css -->
+    <link rel="stylesheet" href="../css/information.css">
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Shotter-Shondhane Information</title>
+    <style>
+        .adminactive{
+  width: 0%;
+  transition: 0.3s;
+}
+.adminacright{
+  width: 100%;
+  transition: 0.3s;
+}
+  </style>
+</head>
+<body>
+    <div class="admin">
+        <div class="admin-left">
+           <%-include("../partials/amleft")%>
+            <!-- menu -->
+        </div>
+        <div class="admin-right">
+           <!-- top header -->
+           <%-include("../partials/amheader.ejs")%>
+           <!-- information update -->
+              <div class="info-update">
+                <h1> Admin Information</h1>
+                <form action="/admin/information"method="POST"onsubmit="return submitform()">
+                    <input type="text"placeholder="Enter Username"name="username"value="<%=admininfo.username%>"contenteditable><br>
+                    <input type="password"placeholder="Enter Password"name="password"value="<%=admininfo.password%>"id="number"contenteditable><br>
+                    <%if(typeof message !== "undefined"){%>
+                      <p id="updatetext"><%=message%></p>
+                    <%}%>
+                    <p id="settext"style="margin-top:10px;color:red"></p>
+                    <button>Update</button>
+                </form>
+              </div>
+           <!-- information update -->
+        </div>
+    </div>
+
+
+        <script src="../js/sidebar.js"></script>
+        <script>
+           var settext = document.getElementById("settext");
+           var number = document.getElementById("number");
+            var memberid = document.getElementById("memberid");
+          function submitform(){
+             if(memberid.value.length <=4){
+             memberid.style.border="2px solid red";
+             settext.innerHTML="Member Code should be 5 character"
+              return false;
+                }
+                else if (memberid.value.length > 5) {
+               memberid.style.border = "2px solid red";
+               settext.innerHTML = "Member Code should be 5 character"
+               return false;
+             }
+                else if(number.value.length >11){
+                    number.style.border = "2px solid red";
+                     settext.innerHTML = "Mobile Number should be 11 character"
+                   return false;
+                } else if (number.value.length < 11) {
+               number.style.border = "2px solid red";
+               settext.innerHTML = "Mobile Number should be 11 character"
+               return false;
+             }
+          }
+        </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- icon link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"><!-- blog css -->
+    <link rel="stylesheet" href="../css/amgallery.css">
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Shotter-Shondhane Gallery</title>
+    <style>
+        .adminactive{
+  width: 0%;
+  transition: 0.3s;
+}
+.adminacright{
+  width: 100%;
+  transition: 0.3s;
+}
+  </style>
+</head>
+<body>
+    <div class="admin">
+        <div class="admin-left">
+           <%-include("../partials/amleft")%>
+            <!-- menu -->
+        </div>
+        <div class="admin-right">
+           <!-- top header -->
+           <%-include("../partials/amheader.ejs")%>
+           <div class="amgallery-main">
+
+              <div class="amgallery-post">
+                <h1>Upload Image</h1>
+               <form action="/admin/gallery"method="POST"enctype="multipart/form-data">
+            <div class="user-file">
+                <img src="../images/image.png" alt="">
+                <input type="file" name="userimage"required>
+            </div>
+                <%if(typeof message !=="undefined" ){%>
+                    <p id="updatetext">
+                        <%=message%>
+                    </p>
+                    <%}%>
+                <button>Post <i class='bx bxs-right-arrow-square'></i></button>
+            </form>
+              </div>
+              <!-- amgallery image -->
+             <div class="show-image">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Image</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%if(data.length > 0){%>
+                            <%data.forEach((e)=>{%>
+                                <tr>
+                                    <td>
+                                        <%=e._id%>
+                                    </td>
+                                    <td><img src="../galleryimages/<%=e.image%>" alt="">
+                                    </td>
+                                    <td><a href="/admin/gallery/<%=e._id%>">Delete</a></td>
+                                </tr>
+                                <%})%>
+                        <%}else{%>
+                           <h2>We do not find any data</h2>
+                        <%}%>
+                        
+                    </tbody>
+                </table>
+             </div>
+
+
+           </div>
+        </div>
+    </div>
+
+
+        <script src="../js/sidebar.js"></script>
+</body>
+</html>

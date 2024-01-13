@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css link -->
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/blogs.css" />
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>Shotter-Shondhane Blogs</title>
+    <style>
+      .activelink {
+        background-color: #f39c12;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blog">
+      <!-- header -->
+      <%-include("./partials/header.ejs")%>
+      <!-- header -->
+      <div class="blogmain">
+        <div class="blogtexbox">
+          <h1>Our Blogs</h1>
+          <p>
+            Here,We Post Many Blog About Our Show And About Our Media Group.We
+            Post Many Thing About Our Function Management.You Can See Our
+            Prevoius Show Episode From The Youtube Channel By CLick The Link.
+          </p>
+        </div>
+      </div>
+      <!-- blogpost -->
+      <div class="blogpost">
+        <div class="blogposts">
+          <%if(blogdata.length> 0){%> <%blogdata.forEach((data)=>{%>
+          <div class="blogbox">
+            <img src="../blogimages/<%=data.image%>" alt="" />
+            <div class="bloginfo">
+              <h3><a href="#"><%=data.title%></a></h3>
+              <p><%=data.description%></p>
+              <h4><%=data.date%></h4>
+            </div>
+          </div>
+          <%})%> <%}else{%>
+          <h2>We Have No Data !</h2>
+
+          <%}%>
+        </div>
+        <div class="pagination">
+          <button>Load More...</button>
+        </div>
+      </div>
+
+      <!-- blogpost -->
+      <!-- footer -->
+      <%-include("./partials/footer.ejs")%>
+      <!-- footer -->
+    </div>
+
+    <!-- toggle code -->
+    <script>
+      let currlink = window.location.pathname.split("/").pop();
+      let linkactive = document.querySelectorAll("ul li a").forEach((e) => {
+        if (e.href.includes(currlink)) {
+          e.classList.add("activelink");
+        }
+      });
+      let navi = document.getElementById("nav");
+      let togg = document.getElementById("toggle");
+      togg.addEventListener("click", function () {
+        navi.classList.toggle("navigation");
+      });
+    </script>
+  </body>
+</html>

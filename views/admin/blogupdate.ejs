@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"> <!-- blog css -->
+    <link rel="stylesheet" href="../../css/amblog.css">
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../../css/admin.css">
+    <title>Shotter-Shondhane Admin</title>
+    <style>
+        .adminactive {
+            width: 0%;
+            transition: 0.3s;
+        }
+
+        .adminacright {
+            width: 100%;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin">
+        <div class="admin-left">
+            <%-include("../partials/amleft")%>
+                <!-- menu -->
+        </div>
+        <div class="admin-right">
+            <!-- top header -->
+            <%-include("../partials/amheader.ejs")%>
+                <div class="blog-main">
+
+                    <div class="blog-post">
+                        <h1>Upload Blog</h1>
+                        <form action="/admin/blogupdate/<%=data._id%>" method="POST" enctype="multipart/form-data"onsubmit="return formsubmit()">
+                            <input type="text" placeholder="Title" name="title"value="<%=data.description%>" required ><br>
+                            <textarea id="description" cols="30" rows="10" name="description"value="<%=data.description%>" required></textarea>
+                    <p id="settext" style="margin-top:10px;color:red"></p>   
+                            <button>Update <i class='bx bxs-right-arrow-square'></i></button>
+                        </form>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+
+
+
+    <script src="../js/sidebar.js"></script>
+    <script>
+        var settext = document.getElementById("settext")
+        var description=document.getElementById("description");
+        function formsubmit(){
+            if(description.value.length >150){
+                description.style.border="2px solid red"
+                settext.innerHTML="You can not set greather than 150 character ";
+                return false; 
+            }
+        }
+    </script>
+</body>
+
+</html>

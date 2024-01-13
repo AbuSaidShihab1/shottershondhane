@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <!-- icon link -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- information css -->
+    <link rel="stylesheet" href="../css/adduser.css">
+    <!-- link admin.css -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <title>Shotter-Shondhane Users</title>
+    <style>
+        .adminactive{
+  width: 0%;
+  transition: 0.3s;
+}
+.adminacright{
+  width: 100%;
+  transition: 0.3s;
+}
+  </style>
+</head>
+<body>
+    <div class="admin">
+        <div class="admin-left">
+           <%-include("../partials/amleft")%>
+            <!-- menu -->
+        </div>
+        <div class="admin-right">
+           <!-- top header -->
+           <%-include("../partials/amheader.ejs")%>
+        <!-- add user -->
+       <div class="user-showsec">
+        
+        <div class="user-add">
+            <h1>Add User</h1>
+           <form action="/admin/adduser"method="POST"enctype="multipart/form-data"onsubmit="return submitform()">
+            <input type="text"placeholder="Enter Username"name="username"id="username"required><br>
+            <input type="password"placeholder="Enter Password"name="password"id="password"required><br>
+              <%if(typeof message !=="undefined" ){%>
+                <p id="updatetext">
+                  <%=message%>
+                </p>
+                <%}%>
+                    <p id="settext" style="margin-top:10px;color:red"></p>
+            <button>Add <i class='bx bxs-right-arrow-square'></i></button>
+        </form>
+          </div>
+
+        </div>
+        <!-- add user -->
+        </div>
+    </div>
+
+
+    <script src="../js/sidebar.js"></script>
+    <script>
+    let password=document.getElementById("password");
+  let username = document.getElementById("username");
+  let formtext=document.getElementById("formtext")
+  function fomsubmit(){
+      if(username.value == "" || password.value == ""){
+          formtext.innerHTML="Please,fill the form correctly !";
+          return false
+      } else if (password.value.length <6) {
+        formtext.innerHTML = "Password should be greater than 5 character";
+        return false
+      }
+      else if (password.value.length >12) {
+        formtext.innerHTML = "Password should be less than 12 character";
+        return false
+      }
+  }
+    </script>
+</body>
+</html>
